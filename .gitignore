@@ -1,0 +1,8 @@
+*.bit
+*.json
+*.pyc
+*.config
+*.log
+*.svf
+*.dat
+*.tmp
