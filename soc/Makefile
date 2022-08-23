@@ -1,7 +1,7 @@
 all: soc.svf
 
 soc.json: attosoc.v wrapper.v
-	yosys -p "synth_ecp5 -top top -nowidelut -nolutram -json $@" $^
+	yosys -p "synth_ecp5 -top top -nowidelut -nobram -nolutram -json $@" $^
 soc.config: soc.json versa.lpf
 	nextpnr-ecp5 --json soc.json --textcfg $@ --lpf versa.lpf --um5g-45k --package CABGA381 --write soc_pnr.json --disable-router-lutperm
 soc.svf: soc.config
